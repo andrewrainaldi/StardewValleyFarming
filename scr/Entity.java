@@ -1,25 +1,40 @@
 package scr;
+
 import java.awt.Graphics;
 
-public abstract class Entity{
-protected double x, y;
-protected double speed;
-protected double width;
-protected double height;
+public abstract class Entity {
 
-    public Entity(double x, double y, double width, double height, double speed) {
+    protected double x;
+    protected double y;
+
+    protected double width;
+    protected double height;
+
+    protected double speed;
+
+    // COSTRUTTORE CORRETTO
+    public Entity(
+        double x,
+        double y,
+        double width,
+        double height,
+        double speed
+    ) {
+
         this.x = x;
         this.y = y;
+
         this.width = width;
         this.height = height;
+
         this.speed = speed;
     }
 
-    // Metodo base per aggiornare la logica (da sovrascrivere se serve)
+    // UPDATE BASE
     public void update() {
-      
+
     }
 
-    // Metodo per disegnare l'entità
+    // DRAW OBBLIGATORIO
     public abstract void draw(Graphics g);
 }
