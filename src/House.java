@@ -1,4 +1,4 @@
-package scr;
+package src;
 
 import java.awt.Graphics; // Risolve l'errore di compilazione dell'override in Entity
 

@@ -1,4 +1,4 @@
-package scr;
+package src;
 
 import java.awt.Graphics; // Import corretto con la S
 import java.awt.Color;

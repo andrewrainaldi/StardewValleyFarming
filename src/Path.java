@@ -1,4 +1,4 @@
-package scr;
+package src;
 
 import java.awt.Color;
 import java.awt.Graphics; // Importato Graphics generico richiesto dalla superclasse
