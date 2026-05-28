@@ -1,32 +1,56 @@
 package scr;
 
 public abstract class Plantation extends Entity {
+
     protected int growthStage = 0;
     protected int maxGrowthStage;
-    protected long tempoCrescitaMilli; // Tempo richiesto tra uno stadio e l'altro
+
+    protected long tempoCrescitaMilli;
     protected long ultimoAggiornamento;
+
     protected boolean harvestable = false;
+
     private boolean alive = true;
 
-    public Plantation(double x, double y, double width, double height, int maxGrowthStage, long tempoCrescitaMilli) {
-        super((int)x, (int)y, (int)width, (int)height, maxGrowthStage);
+    public Plantation(
+        double x,
+        double y,
+        double width,
+        double height,
+        int maxGrowthStage,
+        long tempoCrescitaMilli
+    ) {
+
+        // speed = 0 perché le piante non si muovono
+        super(x, y, width, height, 0);
+
         this.maxGrowthStage = maxGrowthStage;
         this.tempoCrescitaMilli = tempoCrescitaMilli;
+
         this.ultimoAggiornamento = System.currentTimeMillis();
     }
 
     @Override
     public void update() {
-        if (harvestable || !alive) return;
+
+        if (harvestable || !alive) {
+            return;
+        }
 
         long ora = System.currentTimeMillis();
-        // Se è passato il tempo necessario, avanza di uno stadio di crescita
+
+        // crescita
         if (ora - ultimoAggiornamento >= tempoCrescitaMilli) {
+
             if (growthStage < maxGrowthStage - 1) {
+
                 growthStage++;
+
                 ultimoAggiornamento = ora;
+
             } else {
-                harvestable = true; // Arrivato al massimo!
+
+                harvestable = true;
             }
         }
     }
@@ -34,14 +58,17 @@ public abstract class Plantation extends Entity {
     public abstract void harvest();
 
     public void destroy() {
-        this.alive = false;
+
+        alive = false;
     }
 
     public boolean isAlive() {
+
         return alive;
     }
 
     public boolean isHarvestable() {
+
         return harvestable;
     }
 }
