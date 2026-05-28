@@ -3,9 +3,9 @@ package src;
 
 public class Dog extends Entity {
 
-    void draw(GraphicsContext gc) {
-        gc.setFill(Color.BROWN);
-        gc.fillRect((double) this.getX(), (double) this.getY(), (double) this.getWidth(), (double) this.getHeight());
+    void draw(GraphicsContext g) {
+        g.setFill(Color.BROWN);
+        g.fillRect((double) this.getX(), (double) this.getY(), (double) this.getWidth(), (double) this.getHeight());
     }
 }
 
