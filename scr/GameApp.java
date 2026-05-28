@@ -1,3 +1,5 @@
+package scr;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -23,7 +25,7 @@ public class GameApp extends JPanel implements ActionListener {
 
         // Inizializziamo il giocatore (Blu) e un'entità generica (Bianca)
         player = new Player(100, 100, 40, 40, 5);
-        enemy = new Spider(150, 300, 50, 50, 0);
+        enemy = new Spider(150, 300);
 
         // Ascolto della tastiera
         this.addKeyListener(new KeyAdapter() {
