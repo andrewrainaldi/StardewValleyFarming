@@ -9,7 +9,7 @@ public class KeyHandler implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        // Lascialo vuoto, serve per l'interfaccia
+        // non serve ma da implementare per via dell'interfaccia KeyListener
     }
 
     @Override

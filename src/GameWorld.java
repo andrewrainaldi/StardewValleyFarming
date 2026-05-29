@@ -1,4 +1,5 @@
 package src;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
@@ -24,7 +25,7 @@ public class GameWorld extends JPanel implements Runnable {
     // Costruttore
     public GameWorld() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
-        this.setBackground(Color.black);
+        this.setBackground(Color.decode("#176a3a"));
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);

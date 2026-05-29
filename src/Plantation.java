@@ -22,14 +22,13 @@ public abstract class Plantation extends Entity {
     ) {
 
         // speed = 0 perché le piante non si muovono
-        super(x, y, width, height, 0);
+        super(x, y, width , height , 0);
 
         this.maxGrowthStage = maxGrowthStage;
         this.tempoCrescitaMilli = tempoCrescitaMilli;
 
         this.ultimoAggiornamento = System.currentTimeMillis();
     }
-
     @Override
     public void update() {
 

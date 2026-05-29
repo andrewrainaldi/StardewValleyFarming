@@ -24,7 +24,6 @@ public class Villager extends Entity {
         this.merceInVendita = nuovaMerce;
         this.costo = nuovoCosto;
     }
-
     @Override
     public void update() {
         tempoAnimazione += 0.05;
@@ -43,7 +42,7 @@ public class Villager extends Entity {
         double distanza = Math.sqrt(Math.pow(centroX_V - centroX_G, 2) + Math.pow(centroY_V - centroY_G, 2));
         this.giocatoreVicino = (distanza < 80);
     }
-
+ 
     @Override
     public void draw(Graphics g) {
         int drawX = (int) x;
@@ -69,21 +68,21 @@ public class Villager extends Entity {
             int fumettoH = 34;
 
             // Sfondo bianco del fumetto
-            g.setColor(Color.WHITE);
+            g.setColor(Color.decode("#d0ddea"));
             g.fillRoundRect(fumettoX, fumettoY, fumettoW, fumettoH, 10, 10);
             
             // Bordo nero del fumetto
-            g.setColor(Color.BLACK);
+            g.setColor(Color.decode("#000000"));
             g.drawRoundRect(fumettoX, fumettoY, fumettoW, fumettoH, 10, 10);
 
             // Freccia inferiore del fumetto
             int[] polyX = {(int)(x + width / 2 - 5), (int)(x + width / 2), (int)(x + width / 2 + 5)};
             int[] polyY = {fumettoY + fumettoH, fumettoY + fumettoH + 6, fumettoY + fumettoH};
             
-            g.setColor(Color.WHITE);
+            g.setColor(Color.decode("#d0ddea"));
             g.fillPolygon(polyX, polyY, 3);
             
-            g.setColor(Color.BLACK);
+            g.setColor(Color.decode("#000000"));
             g.drawPolyline(polyX, polyY, 3);
 
             // Testo interno al fumetto
