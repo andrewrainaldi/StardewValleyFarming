@@ -90,7 +90,8 @@ public class GameApp extends JPanel implements Runnable {
 
         House casaTrovata = null;
         for (Entity enemy : enemies) {
-            if (enemy instanceof House h) {
+            if (enemy instanceof House) {
+                House h = (House) enemy;
                 casaTrovata = h;
                 if (casaTrovata.controllaSeDietroCasa(player)) {
                     player.draw(g);

@@ -45,10 +45,18 @@ public class Crop extends Plantation {
 
         // Soluzione Hint 5: Convertito in rule switch moderno per eliminare il warning a riga 48
         switch (cropName) {
-            case "tomato" -> drawTomato(g);
-            case "corn" -> drawCorn(g);
-            case "pumpkin" -> drawPumpkin(g);
-            default -> drawGeneric(g);
+            case "tomato":
+                drawTomato(g);
+                break;
+            case "corn":
+                drawCorn(g);
+                break;
+            case "pumpkin":
+                drawPumpkin(g);
+                break;
+            default:
+                drawGeneric(g);
+                break;
         }
 
         // Bordo tile
@@ -62,15 +70,20 @@ public class Crop extends Plantation {
 
         // Soluzione Hint 1: Sostituita la catena di if/else con uno switch basato su growthStage (riga 76)
         switch (growthStage) {
-            case 0 -> g.fillOval((int)x + 20, (int)y + 20, 8, 8);
-            case 1 -> g.fillRect((int)x + 22, (int)y + 16, 4, 16);
-            case 2 -> {
+            case 0:
+                g.fillOval((int)x + 20, (int)y + 20, 8, 8);
+                break;
+            case 1:
+                g.fillRect((int)x + 22, (int)y + 16, 4, 16);
+                break;
+            case 2: {
                 g.fillRect((int)x + 22, (int)y + 10, 4, 22);
                 g.setColor(Color.decode("#72151a"));
                 g.fillOval((int)x + 14, (int)y + 18, 10, 10);
                 g.fillOval((int)x + 24, (int)y + 18, 10, 10);
                 harvestable = true;
             }
+            break;
         }
     }
 
@@ -80,14 +93,19 @@ public class Crop extends Plantation {
 
         // Soluzione Hint 2: Sostituita la catena di if/else con uno switch basato su growthStage (riga 108)
         switch (growthStage) {
-            case 0 -> g.fillRect((int)x + 22, (int)y + 22, 4, 8);
-            case 1 -> g.fillRect((int)x + 20, (int)y + 16, 8, 16);
-            case 2 -> {
+            case 0:
+                g.fillRect((int)x + 22, (int)y + 22, 4, 8);
+                break;
+            case 1:
+                g.fillRect((int)x + 20, (int)y + 16, 8, 16);
+                break;
+            case 2: {
                 g.fillRect((int)x + 18, (int)y + 10, 12, 24);
                 g.setColor(Color.decode("#FFFF00"));
                 g.fillRect((int)x + 18, (int)y + 18, 12, 10);
                 harvestable = true;
             }
+            break;
         }
     }
 
@@ -95,19 +113,22 @@ public class Crop extends Plantation {
 
        
         switch (growthStage) {
-            case 0 -> {
+            case 0: {
                 g.setColor(Color.decode("#216324"));
                 g.fillOval((int)x + 20, (int)y + 20, 8, 8);
             }
-            case 1 -> {
+            break;
+            case 1: {
                 g.setColor(Color.decode("#FFA500"));
                 g.fillOval((int)x + 16, (int)y + 16, 16, 16);
             }
-            case 2 -> {
+            break;
+            case 2: {
                 g.setColor(Color.decode("#FFA500"));
                 g.fillOval((int)x + 10, (int)y + 14, 28, 20);
                 harvestable = true;
             }
+            break;
         }
     }
 
